@@ -97,11 +97,13 @@ void displayBoard(const vector<vector<char>>& board, const vector<string>& playe
         }
         cout << "-" << endl;
 
-        cout << rowLabel++ << " ";
+        cout << rowLabel << " ";
         for (int c = 0; c < cols; ++c) {
             cout << "| " << board[r][c] << " ";
         }
-        cout << "| " << rowLabel - 1 << endl;
+        cout << "| " << rowLabel << endl;  // Changed from rowLabel - 1 to rowLabel
+        
+        rowLabel++;  // Moved increment to after both uses of rowLabel
     }
 
     // Bottom border
